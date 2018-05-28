@@ -67,12 +67,4 @@ class Node {
 	}
 }
 
-const x = new LinkedList();
-
-x.pushToEnd(5);
-x.pushToEnd(6);
-x.pushToEnd(7);
-x.pushToStart(4);
-console.log(x.getAtIndex(2));
-x.deleteAtIndex(2);
-console.log(JSON.stringify(x, null, 4));
+module.exports = LinkedList;

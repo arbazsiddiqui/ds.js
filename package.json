@@ -1,0 +1,22 @@
+{
+  "name": "ds",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "1.0.0-beta.4"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.js"
+    ]
+  }
+}
