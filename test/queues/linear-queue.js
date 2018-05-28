@@ -1,5 +1,5 @@
 const test = require('ava');
-const Queue = require('../../src/queues/linear-queue');
+const Queue = require('../../src/data-structures/queues/linear-queue');
 
 test('initializes a queue correctly', t => {
 	const queue = new Queue();

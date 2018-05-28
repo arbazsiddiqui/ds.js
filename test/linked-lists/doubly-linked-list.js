@@ -1,5 +1,5 @@
 const test = require('ava');
-const LinkedList = require('../../src/linked-lists/doubly-linked-list');
+const LinkedList = require('../../src/data-structures/linked-lists/doubly-linked-list');
 
 test('initializes a ll correctly', t => {
 	const ll = new LinkedList();

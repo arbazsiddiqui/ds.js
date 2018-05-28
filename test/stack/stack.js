@@ -1,5 +1,5 @@
 const test = require('ava');
-const Stack = require('../../src/stack/stack');
+const Stack = require('../../src/data-structures/stack/stack');
 
 test('initializes a stack correctly', t => {
 	const stack = new Stack();
