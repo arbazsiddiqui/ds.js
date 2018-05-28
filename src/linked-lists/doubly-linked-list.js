@@ -1,20 +1,19 @@
 class LinkedList {
 	constructor() {
 		this.head = null;
+		this.tail = null;
 	}
 
 	pushToEnd(value) {
 		const newNode = new Node(value);
-		let temp = this.head;
 		if (!this.head) {
 			this.head = newNode;
+			this.tail = newNode;
 			return this.head;
 		}
-		while (temp.next) {
-			temp = temp.next
-		}
-		temp.next = newNode;
-		newNode.prev = temp;
+		this.tail.next = newNode;
+		newNode.prev = this.tail;
+		this.tail = newNode;
 		return this.head;
 	}
 
