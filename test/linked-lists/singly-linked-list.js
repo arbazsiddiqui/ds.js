@@ -39,7 +39,7 @@ test('deletes at an index correctly', t => {
 	ll.pushToEnd(1);
 	ll.pushToEnd(2);
 	ll.pushToEnd(3);
-	ll.deleteAtIndex(1);
-	t.is(ll.getAtIndex(1).data, 3);
+	ll.deleteAtIndex(2);
+	t.is(ll.getAtIndex(1).data, 2);
 	t.throws(() => ll.deleteAtIndex(4))
 });
