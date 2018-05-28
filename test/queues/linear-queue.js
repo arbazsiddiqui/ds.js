@@ -1,13 +1,13 @@
 const test = require('ava');
 const Queue = require('../../src/data-structures/queues/linear-queue');
 
-test('initializes a queue correctly', t => {
+test('initializes a queue', t => {
 	const queue = new Queue();
 	t.is(queue.ll.head, null);
 	t.is(queue.ll.tail, null);
 });
 
-test('enqueues correctly', t => {
+test('enqueues', t => {
 	const queue = new Queue();
 	queue.enqueue(1);
 	queue.enqueue(2);
@@ -15,7 +15,7 @@ test('enqueues correctly', t => {
 	t.is(queue.ll.head.data, 1);
 });
 
-test('dequeues correctly', t => {
+test('dequeues', t => {
 	const queue = new Queue();
 	queue.enqueue(1);
 	queue.enqueue(2);

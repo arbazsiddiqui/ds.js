@@ -1,12 +1,12 @@
 const test = require('ava');
 const LinkedList = require('../../src/data-structures/linked-lists/doubly-linked-list');
 
-test('initializes a ll correctly', t => {
+test('initializes a ll', t => {
 	const ll = new LinkedList();
 	t.is(ll.head, null)
 });
 
-test('pushes to a end of ll correctly', t => {
+test('pushes to a end of ll', t => {
 	const ll = new LinkedList();
 	ll.pushToEnd(1);
 	ll.pushToEnd(2);
@@ -15,7 +15,7 @@ test('pushes to a end of ll correctly', t => {
 	t.is(ll.head.next.next.data, 3);
 });
 
-test('pushes to begin of ll correctly', t => {
+test('pushes to begin of ll', t => {
 	const ll = new LinkedList();
 	ll.pushToStart(3);
 	ll.pushToStart(2);
@@ -24,7 +24,7 @@ test('pushes to begin of ll correctly', t => {
 	t.is(ll.head.next.next.data, 3);
 });
 
-test('gets at an index correctly', t => {
+test('gets at an index', t => {
 	const ll = new LinkedList();
 	ll.pushToEnd(1);
 	ll.pushToEnd(2);
@@ -34,7 +34,7 @@ test('gets at an index correctly', t => {
 	t.is(ll.getAtIndex(6), null)
 });
 
-test('deletes at an index correctly', t => {
+test('deletes at an index', t => {
 	const ll = new LinkedList();
 	ll.pushToEnd(1);
 	ll.pushToEnd(2);

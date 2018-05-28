@@ -1,12 +1,12 @@
 const test = require('ava');
 const Stack = require('../../src/data-structures/stack/stack');
 
-test('initializes a stack correctly', t => {
+test('initializes a stack', t => {
 	const stack = new Stack();
 	t.deepEqual(stack.items, [])
 });
 
-test('pushed to a stack correctly', t => {
+test('pushed to a stack', t => {
 	const stack = new Stack();
 	stack.push(1);
 	stack.push(2);
@@ -14,7 +14,7 @@ test('pushed to a stack correctly', t => {
 	t.deepEqual(stack.items, [1, 2, 3])
 });
 
-test('pops from a stack correctly', t => {
+test('pops from a stack', t => {
 	const stack = new Stack();
 	stack.push(1);
 	stack.push(2);
@@ -22,7 +22,7 @@ test('pops from a stack correctly', t => {
 	t.is(stack.pop(), 3)
 });
 
-test('peeks from a stack correctly', t => {
+test('peeks from a stack', t => {
 	const stack = new Stack();
 	stack.push(1);
 	stack.push(2);
