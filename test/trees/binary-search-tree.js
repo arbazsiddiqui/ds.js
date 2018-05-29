@@ -43,3 +43,21 @@ test('traverses post order', t => {
 	bst.insert(10);
 	t.deepEqual(bst.postOrder(bst.root), [1, 10, 7, 4])
 });
+
+test('min node', t => {
+	const bst = new BST();
+	bst.insert(4);
+	bst.insert(1);
+	bst.insert(7);
+	bst.insert(10);
+	t.is(bst.minNode(), 1)
+});
+
+test('max node', t => {
+	const bst = new BST();
+	bst.insert(4);
+	bst.insert(1);
+	bst.insert(7);
+	bst.insert(10);
+	t.is(bst.maxNode(), 10)
+});
