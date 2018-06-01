@@ -9,87 +9,102 @@ class BST {
 			this.root = newNode;
 			return this.root
 		}
-		this.insertNode(this.root, newNode)
+		return this._insert(this.root, newNode)
 	}
 
-	insertNode(node, newNode) {
+	_insert(node, newNode) {
 		if (node.value > newNode.value) {
 			if (!node.left) {
 				node.left = newNode
 			} else {
-				this.insertNode(node.left, newNode)
+				return this._insert(node.left, newNode)
 			}
 		} else {
 			if (!node.right) {
 				node.right = newNode
 			} else {
-				this.insertNode(node.right, newNode)
+				return this._insert(node.right, newNode)
 			}
 		}
 		return this.root;
 	}
 
 	preOrder(node) {
-		return this.preOrderCollect(node, []);
+		return this._preOrder(node, []);
 	}
 
-	preOrderCollect(node, res) {
+	_preOrder(node, res) {
 		if (node) {
 			res.push(node.value);
-			this.preOrderCollect(node.left, res);
-			this.preOrderCollect(node.right, res);
+			this._preOrder(node.left, res);
+			this._preOrder(node.right, res);
 		}
 		return res
 	}
 
 	inOrder(node) {
-		return this.inOrderCollect(node, []);
+		return this._inOrder(node, []);
 	}
 
-	inOrderCollect(node, res) {
+	_inOrder(node, res) {
 		if (node) {
-			this.inOrderCollect(node.left, res);
+			this._inOrder(node.left, res);
 			res.push(node.value);
-			this.inOrderCollect(node.right, res);
+			this._inOrder(node.right, res);
 		}
 		return res
 	}
 
 	postOrder(node) {
-		return this.postOrderCollect(node, [])
+		return this._postOrder(node, [])
 	}
 
-	postOrderCollect(node, res) {
+	_postOrder(node, res) {
 		if (node) {
-			this.postOrderCollect(node.left, res);
-			this.postOrderCollect(node.right, res);
+			this._postOrder(node.left, res);
+			this._postOrder(node.right, res);
 			res.push(node.value)
 		}
 		return res
 	}
 
 	minNode(){
-		return this.minNodeIterator(this.root)
+		return this._minNode(this.root)
 	}
 
-	minNodeIterator(node){
+	_minNode(node){
 		if(!node)
 			return null;
 		if(node.left)
-			return this.minNodeIterator(node.left);
+			return this._minNode(node.left);
 		return node.value
 	}
 
 	maxNode(){
-		return this.maxNodeIterator(this.root)
+		return this._maxNode(this.root)
 	}
 
-	maxNodeIterator(node){
+	_maxNode(node){
 		if(!node)
 			return null;
 		if(node.right)
-			return this.maxNodeIterator(node.right);
+			return this._maxNode(node.right);
 		return node.value
+	}
+
+	search(key){
+		 return this._search(key, this.root)
+	}
+
+	_search(key, node){
+		if(!node)
+			return null;
+		if(key===node.value)
+			return node;
+		if(key > node.value)
+			return this._search(key, node.right);
+		if(key < node.value)
+			return this._search(key, node.left);
 	}
 }
 
