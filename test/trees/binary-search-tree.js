@@ -61,3 +61,14 @@ test('max node', t => {
 	bst.insert(10);
 	t.is(bst.maxNode(), 10)
 });
+
+test('search', t => {
+	const bst = new BST();
+	bst.insert(4);
+	bst.insert(1);
+	bst.insert(7);
+	bst.insert(10);
+	t.is(bst.search(10).value, 10);
+	t.is(bst.search(4).value, 4);
+	t.is(bst.search(13), null);
+});
